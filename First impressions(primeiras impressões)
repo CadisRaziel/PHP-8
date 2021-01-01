@@ -1,0 +1,68 @@
+<?php
+
+
+// .html não da para incluir php
+// o script php só aceita se for .php
+// se tiver um script .php e incluir html no inicio e fim e colocar o php no meio funicona ! 
+// se tiver um script .php e incluir php no inicio e depois colocar html e no meio php funciona 
+
+//OBS coloquei "interrogação para nao precisar por o simbolo se nao ele fica fechando e parando de comentar kkkk
+// usar assim para iniciar o php ""<?php"(para iniciar, sem as aspas) 
+// usar assim para realizar "<?'teste'interrogação>" = para apresentar valores ou textos ou calculos de determinadas formas
+
+//script puro de php inicia com <?php e não é pra colocar o fechamento que é o interrogação>
+
+//=========================================================================================================================================================================
+//NÃO USAR
+//<? CODIGO AQUI interrogação?
+
+//ou
+
+//<script language="php>
+//codigo aqui
+//</script>
+
+//ou
+
+//<% %>
+
+//=========================================================================================================================================================================
+
+<?php
+echo "Ola mundo";
+print 'ola mundo';
+
+//posso usar o echo ou o print para apresentar texto
+//são duas funções nativas do php
+//a forma mais comum é utilizar o echo
+
+//formas de escrever o echo
+// echo "php";
+// echo 'php';
+// echo ("php");
+// o resultado sera sempre o mesmo
+// qualquer uma das formas funciona mas entre elas tem uma ligeira diferença
+
+// <br> para por paragrafo(quebra de linha)
+
+//=========================================================================================================================================================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php echo 'teste 1' ?>
+
+    <br>
+
+    <?php echo "teste 2" ?>
+
+    <br>
+
+    <?='teste 3' ?>
+</body>
+</html>
