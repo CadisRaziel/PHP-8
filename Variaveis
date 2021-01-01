@@ -1,0 +1,61 @@
+<?php
+
+//VARIAVEIS
+//=================================================
+
+// são usadas para guardar dados: numeros, textos,etc..
+// podemos apresentar e modificar os seus valores ao longo do código
+
+// definem-se com um dollar ($) e um ntendificador (nome da variavel)
+
+//exemplo
+
+$variavel;
+
+// podemos definir e iniciar uma variavel
+// $variavel = 100;
+
+// podemos alterar o tipo de valores de uma variavel
+// $variavel = "teste";
+
+// ou seja as variaveis não são tipificadas pois eu posso usar $variavel = 100; no inicio e com o mesmo nome usar $variavel ="teste"; no meio do codigo, tornando confuso.
+
+
+// as variaveis são case sensitive assim como no c#
+// $variavel = "uma variavel";
+// $Variavel = "outra variavel; //* repare que no inicio dessa tem o V maiusculo
+
+//-----------------------------------------------------------------------
+// como não podemos escrever as variaveis \/
+$var1 = 0;
+$!var = 0;
+$variavel(1) = 0;
+$variavel um = 0;
+$variavel -um = 0;
+//-----------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------
+// como escrever variaveis de forma correta \/
+$var1 = 0;
+$var_um = 0;
+$varUm = 0;
+$_um = 0;
+$_1 = 0; 
+//-----------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------
+# convenções (não há um modo mais correto de escrever as variaveis em php)
+$umaVariavel = 0; //*came case (tecnica frequente usada)
+$uma_variavel = 0; //*com underline(snake case) (tecnica frequentemente usada)
+
+$UmaVariavel = 0; //* studly case (não recomendada)
+//-----------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------
+// DEVE SER SEMPRE MANTIDO O MESMO ESTILO AO LONGO DO PROJETO
+
+$variavel = 100;
+echo $variavel;
