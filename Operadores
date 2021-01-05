@@ -1,0 +1,47 @@
+<?php
+
+# OPERADORES
+
+# são simbolos que permitem executar operações matematicas 
+# ou operações logicas \ comparativas
+
+
+# Operador de atribuição
+$variavel  = 100;
+$variavel = "Vitor";
+
+# Operadores aritimeticos (calculos matematicos)
+$x = 4 + 2; # adição
+$x = 4 - 2; # subtração
+$x = 4 * 2; # multiplicação
+$x = 4 / 2; # divisão
+$x = 4 % 2; # modulus (restante da divisão o 0,111111111)
+
+# modulus
+$x = 100 % 3; # 33.3........1 < sobra 1
+$x = 60 % 3; # 20..........0 < sobra 0
+$x = 13 % 3; # 6.5..........1 < sobra 1
+
+# exemplo
+
+echo 3462 / 7; # resultado aqui = 494.57142857143
+echo '<br>';
+echo 3462 & 7; # resultado aqui = 4 (ele fez a divisão e arredndou por cusa do %)
+
+# outro exemolo 
+
+$a = 10;
+$b = 20;
+$resultado = $a + $b; # = 30
+$resultado = $a + 100; # = 110
+$resultado = $a * $b; # = 200
+
+$c  = $d = $h = 100; # as 3 variavies vai ter o valor 100
+$resultado = 1000 + $a + 10 + $b;
+
+
+# desde o PHP 5.6 existe o expoente que permite calculcar a potência
+$x = 4**2; # 4 elevado a 2
+echo $x;
+# resultado sera 16
+
