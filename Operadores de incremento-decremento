@@ -1,0 +1,41 @@
+<?php
+
+# OPERADORES DE ATRIBUIÇÃO COMBINADOS 
+# permite alterar o valor da uma variavel, a partir do seu valor original
+
+$a = 10;
+
+$a = $a + 20; # = 30
+$a = $a - 3; # = 7
+$a = $a * 2; # = 20
+$a = $a / 2; # = 5
+
+
+//simplificando o código acima 
+
+$a += 20; # = 30
+$a -= 3; # = 7
+$a *= 2; # = 20
+$a /= 2; # = 5
+
+//-------------------------------------------------------------
+
+# OPERADORES DE INCREMENTO E DECREMENTO
+# adiciona ou subtraem uma unidade variavel
+
+$a = 1;
+
+$a++; # $a = $a + 1; (incremento)
+$a--; # $a = $a - 1; (decremento)
+
+
+# os mesmos operadores poder ser de pré-incremento ou pós-incremento
+# o mesmo acontece para o decremento
+
+$a = 10;
+
+$a++; 
+++$a;
+
+$a--; # = 100 (exemlo)
+--$a; # = 99 (exemplo)
