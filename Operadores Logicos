@@ -1,0 +1,58 @@
+<?php
+
+# OPERADORES LOGICOS
+
+# Os operadores logicos são frequentemente usados com os operadores de comparação
+# Eles permitem "ligar" varias comparações avaliando se são verdadeiras ou falsas
+
+# No PHP a construção correta de instrução condicionais depende destes operadores
+# (instruções condicionais verificam se uma situação é verdaderia(true) ou falsa(false))
+
+
+# OPERADORES LOGICOS
+# && (mais utilizado)
+# || (mais utilizado)
+# AND
+# OR
+# XOR
+
+# OBSERVAÇÂO
+# Existem os operadores BitWise
+# Servem para analisar valores binarios de numeros
+# Existem precedencias de operadores
+
+
+
+
+$a = 100; 
+$b = 200;
+
+$x = ($a < $b) && ($a < 1000); # && = AND -> True
+$x = ($a > $b) || ($a > 1000); # || = OR -> False
+$x = ($a < 150) && ($b > 300); # false
+$x = ($a > 10) || ($b > 500); # true
+$x = ($a == 100) && ($b < $a); # false
+
+# outros exemplos
+
+$x = (10 > 5) && (20 > 30); 
+$x = (true && false); # false
+
+$x = (2 > 1) && (3 > 2); 
+$x = (true && true); # false
+
+$x = (2 > 4) || (4 > 100); 
+$x = (true || false); # false
+
+$x = (2 == 3) || (3 > 1); 
+$x = (false || true); # false
+
+
+
+# outro exemplo
+
+$a = false;
+
+$x = !$a; # transformar em verdadeiro mesmo sendo falso
+
+
