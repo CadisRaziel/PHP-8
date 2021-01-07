@@ -1,0 +1,103 @@
+<?php
+
+# STRING
+
+# uma string é uma série de caracteres que podem ser guardados numa variavel.
+# Podemos definir uma string como sendo um conjunto de letras, espaços, simbolos e algarismos
+# normalmente designamos por texto.
+
+# Em PHP, as strings podem ser deliminadas por 
+# aspas simples ''(single quote, apostofro.)
+# aspas dupla "" (dougle quote)
+
+$a = 'Esta é uma string';
+$b = "Esta tambem é uma string";
+
+echo $a;
+echo '<br';
+echo $b;
+
+# nas PSRS não existe uma orientação definida , devemos ser consistentes ao longo do nosso condigo.
+# ou seja se eu colocar as strings com '' eu devo sempre seguir esse padrao
+# ou se eu colocar as strings com "" eu devo seguir sempre esse padrao
+# não ficar alternando entre "" e ''
+
+
+# Concatenação de strings
+# é o processo que, atraves do codigo, permite juntar varias strings.
+
+# Existem dois operadores de concatenação
+#.
+#.=
+# no c# é utilizado o "+"
+
+$a = 'Joao' . ' ' . 'Ribeiro'; # o ponto liga as diferentes strings
+
+$b = 'Joao';
+$b .= ' ' . 'Ribeiro'; # o .= faz uma concatenação com um valor ja existente na string
+
+echo $b;
+die(); # quando o scritp começa ser lido ao encontrar o metodo "die()" ele para
+# é igual o "break" do c#
+
+
+# outro exemplo
+
+$nome = 'Joao';
+$sobrenome = 'Ribeiro';
+$nome_completo = $nome .' '. $apelido;
+
+echo $nome_completo;
+die();
+
+
+# a diferença entre strings delimitadas por '' e por "" é que, no segundo caso, podemos fazer o seguinte
+
+$nome = 'Joao';
+$sobrenome = 'Ribeiro';
+$nome_completo = "$nome $apelido"; # com "" podemos concatenar strings
+
+echo $nome_completo;
+
+
+# ao contrario das "", nas strings '' as variaveis não são interpretadas
+# relativamente ao seu valor (parse)
+# parse significa que quando esta com as "" o sistema vai substituir as variaveis string pelo seu valor(ou seja Joao Ribeiro)
+# "" mostra resultado de string, '' não mostra resultado de string (no echo)
+
+
+# HEREDOC e NOWDOC (outras formas de delimitaçoes)
+# apesar de não serem muito comuns, podem ser usadas para tratamento de maiores blocos de texto
+
+# HEREDOC  = permiter fazer o perse da variavel
+# <<<LABEL .... LABEL; = HEREDOC
+
+$cliente = 'Joao Ribeiro';
+$emial = 'Joao.ribeiro@gmail.com';
+
+$texto = <<<LABEL
+Ola, Sr. $cliente. 
+Serve a presente mensagem para informar que se encontra inscrito no proximo concurso.
+Enviamos o regulamento para o seu email $email
+Obrigado pela sua simpatia.
+LABEL;
+
+echo $texto;
+die();
+
+
+# NOWDOC = não permite variaveis
+# USA '' no label '<<<label'
+# as strings não seram mostradas.
+$cliente = 'Joao Ribeiro';
+$emial = 'Joao.ribeiro@gmail.com';
+
+$texto = <<<'LABEL'
+Ola, Sr. $cliente. 
+Serve a presente mensagem para informar que se encontra inscrito no proximo concurso.
+Enviamos o regulamento para o seu email $email
+Obrigado pela sua simpatia.
+LABEL;
+
+echo $texto;
+die();
