@@ -1,0 +1,56 @@
+<?php
+
+# CARACTER DE ESCAPE
+
+echo '<p>Esté é um paragrafo de HTML<p>';
+echo '<br>';
+
+# Os caracteres de escape são usados para escrever caracteres especiais
+# como é o caso de alguns simbolos que podem entrar em conflito com o codigo
+
+$frase = 'I'm going to John's Party!'; # jeito errado
+$frase_2 = "I'm going to John's Party!"; # jeito certo
+
+$frase_3 = "I'm not sure John "The great" will win this fight.";
+
+# a "\" é o simbolo para definir um caractere de escape 
+
+$frase_1 = 'I\'m going to John\' Party!';
+
+
+$frase_4 = 'I\'m not sure John "The great" will win this fight.';
+$frase_5 = 'I\'m  not sure John \"The great\" will win this fight.';
+
+
+
+# outro exemplo
+
+
+# apenas tem o comportamento desejado no terminal. (comando usado só no terminal)
+echo 'Joao Ribeiro\n\rTeste'; 
+echo 'Joao Ribeiro\n\rTeste'; 
+
+# \n = New line (nova linha)// Usado como quebra de linha Unix/Mac OS superior à versão X
+# \r = CR (Carriage Return) // Usado como quebra de linha no Mac OS anterior à versão X
+# \r\n = CR + LF // Usado como quebra de linha no Windows 
+
+
+# NO PHP 7  foi introduzido o caracter de escape unicode.
+# Permite apresentar caracteres a partir do seu código hexodecimal
+
+# link da tabela \/
+# https://www.utf8-chartable.de/
+
+echo "\u{a9}"; # copyright
+echo "\u{BC}"; # 1/4
+echo "\u{AE}"; # registered trademark
+
+
+# com HTML entities (tem a mesma função que o codigo acima porém é mais antigo)
+# link da tabela \/
+# https://dev.w3.org/html5/html-author/charref
+
+echo '<br>';
+echo '&copy';
+echo '&frac14';
+echo '&reg';
