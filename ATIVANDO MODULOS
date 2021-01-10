@@ -1,0 +1,18 @@
+<?php
+
+/* Como ativar um modulo
+no "pergunta2.php" eu preciso ativar o modulo mbstring
+
+no terminal digite php -m 
+para ver os modulos instalados
+
+
+em seguida de stop no laragon e clique com o botão direito e vá no php.ini
+no php.ini procure pela extensão mbstring
+retire o comentario e salve
+
+em seguida ative o laragon novamente e digite no terminal php -m 
+e la estará o comando mbstring 
+
+
+uma observação se voce ir até a pasta do laragon e ir em php 8 vai ter as pastas com extensões*/
