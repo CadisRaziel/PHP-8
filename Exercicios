@@ -1,0 +1,225 @@
+PERGUNTA 1
+
+<?php
+
+# Crie um script index.php
+# defina duas variaveis nome e sobrenome
+# numa estrutura basica de HTML, apresente um titulo estatico do tipo <h3></h3> com o texto 'meu nome é'
+# apresenta numa tag <h1></h1> o nome completo a partir das variaveis criadas
+
+PRIMEIRA SOLUÇÃO
+
+<?php
+    #criando o script php
+    #definindo as variaveis
+    $nome = "Vitor";
+    $sobrenome = "Brussolo Zerbato";            
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá</title>
+</head>
+<body>
+    <h3>O meu nome é</h3>
+    <!-- introduzindo o script php na tag h1 -->
+    <!-- o simbolo usado abaixo com <interrogação=.... interrogação> subistitui o echo -->
+    <h1><?= "$nome $sobrenome"?></h1>
+    
+</body>
+
+</html>
+
+
+
+
+SEGUNDA SOLUÇÃO
+
+<?php
+    #criando o script php
+    #definindo as variaveis
+    $nome = "Vitor";
+    $sobrenome = "Brussolo Zerbato";            
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá</title>
+</head>
+<body>
+    <h3>O meu nome é</h3>
+    <!-- introduzindo o script php na tag h1 -->
+    <!-- outra forma de resolver concatenando -->
+    <h1><?= "$nome . ' ' . $sobrenome"?></h1>
+    
+</body>
+
+</html>
+
+
+TERCEIRA SOLUÇÃO
+
+<?php
+    #criando o script php
+    #definindo as variaveis
+    $nome = "Vitor";
+    $sobrenome = "Brussolo Zerbato";            
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá</title>
+</head>
+<body>
+    <h3>O meu nome é</h3>
+    <!-- introduzindo o script php na tag h1 -->
+    <!-- ao inves do simbolos do index.php podemos usar o echo mesmo -->
+    <h1><?php echo "$nome . ' ' .$sobrenome"?></h1>
+    
+</body>
+
+</html>
+
+//=============================================================================================
+
+PERGUNTA 2
+
+<?php
+
+
+# crie um index.php
+# defina as variaveis nome e sobrenome
+# apresente o nome completo em um paragrafo HTML
+# no segundo paragrafo apresente o seguinte:
+# o meu nome tem x caracteres.
+# sendo o x o calculo total de caracteres do seu nome.
+
+
+PRIMEIRA SOLUÇÃO
+
+<?php
+    #pergunta2.php
+    #criando o script php
+    #definindo as variaveis
+    $nome = "Vitor";
+    $sobrenome = "Brussolo Zerbato";   
+    $nome_sobrenome = strlen($nome);         
+    $nome_sobre = strlen($sobrenome);
+    $nome2 = $nome_sobre + $nome_sobrenome;
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá</title>
+</head>
+<body>
+    <h3>O meu nome é</h3>
+    <!-- introduzindo o script php na tag h1 -->
+    <!-- o simbolo usado abaixo com <interrogação=.... interrogação> subistitui o echo -->
+    <h1><?=  "$nome $sobrenome"?></h1>
+    <h1>O meu nome tem <?= "$nome2"?> caracteres</h1>
+    
+    
+</body>
+
+</html>
+
+
+SEGUNDA SOLUÇÃO
+
+<?php
+    #pergunta2.php (jeito feito no canal)
+    #criando o script php
+    #definindo as variaveis
+    $nome = "Vitor";
+    $sobrenome = "Brussolo Zerbato";   
+    $nome_completo = "$nome $sobrenome";
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá</title>
+</head>
+<body>
+    <h3>O meu nome é</h3>
+    <!-- introduzindo o script php na tag h1 -->
+    <!-- o simbolo usado abaixo com <interrogação=.... interrogação> subistitui o echo -->
+    <p><h1><?=  "$nome_completo"?></h1></p>
+    <p><?= "O meu nome tem " . strlen($nome_completo). " caracteres." ?></p>
+
+    <!-- OBSERVAÇÃO se o nome tiver acento vai contar como 1 caracter a mais -->
+    <!-- para evitar isso ative o mbstring no modulo -->
+    <!-- e ao inves de colocar strlen coloque mb_strlen -->
+    
+    
+</body>
+
+</html>
+
+//======================================================================================================
+
+
+3 PERGUNTA
+
+<?php
+
+#pergunta3
+# crie um index.php
+# defina duas variaveis nome e sobrenome
+# (ambas deverão ter texto com minusculas )
+# numa pagina html simples, apresente o seguinte texto dentro de um paragrafo
+# O meu nome é .... e meu SOBRENOME é....
+# nome minusculo e sobrenome maisuculo
+
+
+PRIMEIRA SOLUÇÃO
+
+<?php
+    #pergunta2.php (jeito feito no canal)
+    #criando o script php
+    #definindo as variaveis
+    $nome = "Vitor";
+    $sobrenome = "Brussolo Zerbato";   
+    
+    
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá</title>
+</head>
+<body>
+    
+    <!-- introduzindo o script php na tag h1 -->
+    <!-- o simbolo usado abaixo com <interrogação=.... interrogação> subistitui o echo -->
+    
+    <p><?= "O meu nome é " . strtolower($nome). " e meu sobrenome é " . strtoupper($sobrenome) ?></p>
+    
+    <!-- lembre que letras com acento ela vai ficar minuscula se colocar strtoupper -->
+    <!-- para resolver use o mb_strtoupper para letras com acento -->
+</body>
+
+</html>
