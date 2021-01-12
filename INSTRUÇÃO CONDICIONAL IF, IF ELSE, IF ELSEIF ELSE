@@ -1,0 +1,134 @@
+<?php
+
+# DECLARAÇÕES/INSTRUÇÕES CONDICIONAIS
+
+# são instruções utilizadas para controlar o fluxo de aplicação de acordo
+# como determinadas condições
+
+# para verificação das condições destas declarações, recorremos ao uso
+# de operadores de comparação combinados com operadores logicos.
+
+# o PHP contém várias estruturas condicionais, como iremos ver,
+# e no PHP8 foi introduzida mais uma estrutura que tamrem iremos ver
+
+
+
+# DECLARAÇÕES/INSTRUÇÕES CONDICIONAIS
+# Declaração IF - define blocos de código que só são executados se a condição for verdaderia (true)
+
+$nome = 'vitor';
+if($nome == 'vitor')
+{
+    echo 'Foi indentificado o nome do autor dessa frase.';
+}
+
+# IF .... ELSE
+
+$idade = 18;
+if($idade <= 18)
+{
+    echo 'adolescente';
+}
+else
+{
+    echo 'adulto';
+}
+
+# IF ... ELSEIF .... ELSE
+
+# lembre-se que o elseif tem que ter o ()
+$nota = 5; # notas de 0 a 10
+if($nota <= 2)
+{
+    echo 'Nota fraca';
+}
+elseif($nota <= 4)
+{
+    echo 'Nota insulficiente';
+}
+elseif($nota <= 6)
+{
+    echo 'Nova positiva';
+}
+elseif($nota <= 8)
+{
+    echo 'Nota muito positiva';
+}
+else
+{
+    echo 'nota excelente';
+}
+
+
+# podemos deixar de usar as /chaves{} só se existir uma instrução no bloco
+
+$nota = 5; # notas de 0 a 10
+if($nota <= 2)
+    echo 'Nota fraca';
+
+elseif($nota <= 4)
+    echo 'Nota insulficiente';
+
+elseif($nota <= 6)
+    echo 'Nova positiva';
+
+elseif($nota <= 8)
+    echo 'Nota muito positiva';
+
+else
+    echo 'nota excelente';
+
+
+
+# ou podemos ter a combinação das duas com chave e sem chave
+
+$nota = 5; # notas de 0 a 10
+if($nota <= 2)
+{
+    echo 'Nota fraca';
+    echo 'Reportar ao diretor da escola';
+}
+elseif($nota <= 4)
+    echo 'Nota insulficiente';
+
+elseif($nota <= 6)
+    echo 'Nova positiva';
+
+elseif($nota <= 8)
+    echo 'Nota muito positiva';
+
+else
+    echo 'nota excelente';
+
+
+# exemplo
+
+# uso de operadores logicos
+$numero = 20;
+if($numero > 10 && $numero != 30)
+{
+    //executar o codigo
+}
+else
+{
+    //executa outro codigo
+}
+
+
+# uso de condições dentro de condições
+$numero = 10;
+if($numero > 0) # se o numero for maior que 0 ele vai realizar o if abaixo
+{
+    if($numero >= 100)
+    {
+        echo 'o numero é igual ou maior que 100';
+    }
+    else
+    {
+        echo 'o numero é positivo, mas inferior a 100';
+    }
+}
+else
+{
+    echo 'o numero é negativo';
+}
