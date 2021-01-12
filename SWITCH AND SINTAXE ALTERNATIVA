@@ -1,0 +1,84 @@
+<?php
+
+# DECLARAÇÃO/INSTRUÇÕES CONDICIONAIS
+
+# SWITCH - uma alternativa ao IF
+
+$nome = 'vitor';
+switch ($nome) 
+    {
+    case 'vitor': # caso a variavel ser joao ele vai executar o codigo 1 e assim vai....
+        # codigo 1
+        break; # para parar aqui o codigo 1 é obrigatório por
+
+    case 'ana':
+        # codigo 2
+        break;
+
+    default: # caso não seja nenhum das variaveis acima vai executar o codigo 3
+        # codigo 3
+        break; 
+
+    }
+
+
+switch ($nome)
+    {
+        case 'vitor':
+            echo '1';
+            break;
+
+        case 'ana':
+            echo '2';
+            break;
+        
+        default:
+            echo 'qualquer coisa';
+            break;
+    }
+
+
+    # SINTAXE ALTERNATIVA
+
+    #if normal
+    $valor = 5;
+    if($valor == 10)
+    {
+        //codigo 1
+    }
+    else
+    {
+        //codigo 2
+    }
+
+
+    #if alternativa (não é muito utlizada)
+    if($valor == 10):
+        //codigo 1
+    else:
+        //codigo 2
+    endif;
+    # caso tiver elseif tambem colocar : "elseif:"
+
+    #SWITCH alternativa
+    switch($variable):
+    case 'value':
+        #code
+        break;
+        
+    default:
+        #code
+        break;
+
+    endswitch;
+
+    # ABAIXO VEREMOS OUTRA SINTAXE ALTERNATIVA COM HTML (frequentemente usado)
+?>
+
+<?php if(true): ?>
+    <div>Executar este codigo HTML</div>
+<?php else: ?>
+    <h3>Executar aqui</h3>
+<?php endif; ?>
+
+    
