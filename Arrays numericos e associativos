@@ -1,0 +1,96 @@
+<?php   
+
+# ARRAYS
+
+# Um array(traduzido para PT "uma matriz") é na realidade uma coleção de valores.
+# Funciona como uma variavel, mas que pode conter muitos valores "arrumados" cada um com seu espaço
+# Esse "espaço" é designado por indice do array.
+
+# Resumindo, um array é uma coleção constituida por chaves/indices e valores.
+# as chaves/indices podem ser numeros (array numerico) ou strings (array associativo)
+# e podem até coexistir os dois tipos de indices no array.
+# os valores podem ser de qualquer tipo, inclusive serem outros arrays
+
+# exemplo 
+
+$valores = array(1,2,3,4,5);
+$nome = array('joao', 'vitor', 'gi');
+
+
+# a partir do PHP 5.4, se passou a ser possivel escrever os arrays de forma mais simplificada
+$valores = [1,2,3,4,5,6];
+$nomes = ['vitor', 'gi'];
+
+
+# estes arrays são de indices numericos
+# para apresentar um de seus valores, procedemos da seguinte forma:
+echo $valores[0];
+echo $nomes[1];
+
+# Nunca esquecer que os arrays tem indice de base 0
+
+# não tem obrigatoriamente de ter chaves sequenciais(indices)
+$dados = [
+    10 => 1000, # o indice 10 vai ter o valor de 1000
+    20 => 2000, # o indice 20 vai ter o valor de 2000
+    30 => 3000  # o indice 30 vai ter o valor de 3000
+   #31 => 4000  # esse valor é da variavel abaixo (so para mostrar como que ficaria se criar um dado fora da []) 
+];
+
+# se adicionarmos um novo elemento no final da coleção, ele vai assumir o ultimo indice + 1
+$dados[] = 4000; # $dados[31];   (é 31 porque o ultimo foi 30 esta ali em cima)
+
+
+
+# ARRAYS
+
+# sempre que queremos apresentar um valor de array, usamos o seu indice.
+# da mesma forma, podemos alterar o valor do array usando o seu indice.
+
+$valores = [10,20,30];
+$valores[1] = 2000; # $valores = [10,2000,30];
+
+#podemos tambem ignorar o indice para adicionar um novo elemento ao array 
+$valores[] = 3000; # $valores = [10,2000,30,3000];
+
+#ou de outra forma....
+array_push($valores,5000); # $valores = [10,2000,30,3000,5000];
+
+# para apresentar os valores de um array nume string, podemos fazer da seguinte forma:
+echo 'Os valores são: ' . $valores[0] . ' e ' . $valores[1];    
+# ou
+echo "Os valores são:  $valores[0] e $valores[1]"; # usando ""
+
+
+
+# ARRAYS ASSOCIATIVOS
+
+# ao contrario dos arrays numericos, as chaves são do tipo string 
+
+$dados = [
+    'A' => 20,
+    'B' => 30,
+    'C' => 40,
+    'D' => 50,
+    'E' => 60
+];
+
+# ou
+
+$dados = [ 
+    'nome' => 'vitor',
+    'email' => 'vitorbrussolo@gmail.com',
+    'nacionalidade' => 'Brasileiro',
+    'telefone' => '99999999'
+];
+
+
+# da mesma forma que nos arrays numericos não devem existir duas chaves iguais
+# nos associativos tambem não
+# na apresentação não é gerado nenhum erro. O valor a ser definido é sempre o ultimo.
+$dados = [ 
+    'nome' => 'joao',
+    'nome' => 'vitor'
+];
+# observe como tem duas chaves nome. (o array vai assumir sempre o ultimo se tiver chave igual)
+echo $dados['nome'];
