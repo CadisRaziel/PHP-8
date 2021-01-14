@@ -1,0 +1,109 @@
+<?php
+
+# EXPRESSAO MATCH
+
+
+# no PHP 8 foi introduzida uma nova expressão condicional designada por Match
+# é muito semelhante ao switch, mas com uma sintaxe mais concisa
+# ou seja switch comparada  apenas o valor
+# o match compara o valor e o tipo (string, bool, int etc..)
+
+
+
+# COM SWITCH
+# no switch podemos usar mais de uma linha de string olhe no case 5
+$x = 10;
+switch ($x)
+{
+    case 5:
+        echo 'parou no 5';
+        echo 'parou no 5';
+        echo 'parou no 5';
+        echo 'parou no 5';
+        echo 'parou no 5';
+        echo 'parou no 5';
+        break;
+    
+    case 10:
+        echo 'parou no 10';
+        break;
+
+    case 15:
+        echo ' parou no 15';
+        break;
+
+    default:
+        echo 'é um numero diferente de 5,10 ou 15';
+    break;
+}
+
+echo '<hr>';
+
+
+# Exemplo com MATCH
+# no match podemos usar apenas uma linha de string diferente do switch
+echo match($x)
+{
+    5 => 'parou no 5',
+    10 => 'parou no 10',
+    15 => 'parou no 15',
+    default => 'é um numero diferente de 5,10 ou 15'
+};
+
+
+
+# é possivel executar a mesma operação por varias condições.
+$x = 10;
+$opcao = match($x)
+{
+    2 => 'e 2',
+    4, 5, 6 => 'é 4, 5 ou 6',
+    default => 'é outro valor'
+};
+
+#no switch tambem é possivel fazer a mesma operação por varias condições 
+# esse exemplo é o mesmo codigo acima
+$x = 10;
+switch ($x)
+{
+    case 2:
+        $opcao = 'é 2';
+        break;
+
+    case 4:
+    case 5:
+    case 6:
+        $opcao = 'é 4, 5 ou 6';
+        break;
+
+    default:
+        $opcao = 'é outro valor';
+}
+
+# IMPORTANTE 
+# no switch, as comparações podem ser feitas só por valor(==)
+# no caso do match, são sempre feitas por valor e tipo (===)
+
+echo '<hr>';
+
+$x = '1'; # no switch ele fez apenas o valor sem olhar para string ou seja "valor 1 inteiro'  (==)
+# inteiro
+switch ($x)
+{
+    case 1:
+        echo 'inteiro'; break; #será esse no caso
+    case '1':
+        echo 'string';
+    # no ultimo "case" não precisa usar o break.
+}
+
+
+echo '<br>';
+
+# string
+echo match($x) # aqui ele verifica o valor e o tipo ou seja "valor do $x é 1 e seu tipo é uma string"
+{
+    1 => 'inteiro',
+    '1' => 'string' #será esse no caso
+};
+
