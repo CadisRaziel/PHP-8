@@ -1,0 +1,40 @@
+<?php
+
+# OPERADOR TERNARIO 
+
+# È um operador condicional que pode substituir uma estrutura simples IF, ELSE
+# o operador necessita de tres expressoes ou areas:
+# 1. A expressão que será avaliada como verdadeira 
+# 2. A expressão que será executada com o true
+# 3. A expressão que será executada com o false
+
+
+$opcao = 0;
+
+$nome = $opcao == 1 ? 'vitor' : 'joao'; # se opcao for verdadeira vai chamar vitor se for falso vai chamar joao
+
+# podemos tambem usar da seguinte forme:
+$opcao == 1 ? $nome = 'vitor' : $nome = 'joao';
+
+#podemos usar o operador ternario em varias situações distintas.
+#por exemplo, para apresentar um determinado texto
+
+echo $opcao == 1 ? 'SIM' : 'NAO';
+
+?>
+
+<!-- Com instrução condicional IF -->
+<!-- esse codigo abaixo é inserido no HTML -->
+<?php if($opcao == 1): ?>
+    <h2>SIM</h2>
+<?php else: ?>
+    <h2>NAO</h2>
+<?php endif; ?>    
+
+
+<!-- Com o operador ternario o mesmo codigo acima fica assim -->
+<h2><?= $opcao == 1 ? 'SIM' : 'NAO' ?></h2>
+
+
+<!-- Por exemplo, para controlar CSS -->
+<h2> style="color: <?= $opcao == 1 ? 'red' : 'blue' ?>">Este texto tem cor definida pelo PHP</h2>
