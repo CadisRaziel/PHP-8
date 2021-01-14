@@ -1,0 +1,35 @@
+<?php
+
+# CICLOS/LOOPS
+
+# existem 4 estruturas de ciclos em PHP.
+# Elas existem para permitir executar um determinado bloco de código várias vezes.
+
+
+# WHILE
+# definimos a condição durante a qual o ciclo deve continuar a ser executado.
+# quando essa condição for falsa, o ciclo termina e o código avança 
+
+$x = 1;
+while($x < 10)
+{
+    echo 'ciclo em execução<br>';
+   $x++; //se nao colocar $x++ ele nao para de gerar 'ciclo em execuçao'
+   //$x++ vai fazer que o $x = 1 depois que completar uma volta se transforme em $x = 2 e assim vai até chegar no 10 e parar por ser < 10
+}
+
+echo '<hr>';
+
+# outro exemplo
+
+$i = 0; // vai gerar do 0 até o 9
+while($i < 10)
+{
+    echo $i++ . '<br>'; // o . é uma concatenação no php
+} 
+
+# neste caso podemos removar as chaves{}
+$i = 0;
+while ($i < 10) echo $i++ . '<br>';
+
+# IMPORTANTE: Nunca esquecer a alteração da condição ou seja (++), caso contrario teremos um ciclo infinito
