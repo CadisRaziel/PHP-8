@@ -1,0 +1,55 @@
+<?php   
+
+# CICLOS/LOOPS
+
+# FOR (um dos ciclos mais utilizados no php)
+
+# Permite executar um bloco de código determinado  numero de vezes
+# é constituido por tres parametros 
+# 1. o indicador  - indica o valor inicial do contator
+# 2. a condição  - indica qual a condição para que o ciclo termine
+# 3. o incremento - altera o valor do contador em cada ciclo
+
+
+for ($x = 1; $x < 10; $x++;)
+{
+    echo $x . '<br>';
+}
+
+echo '<hr>';
+
+
+# mais uma vez, se for executada apenas uma expressão 
+# não é necessario usar chaves {} (não é recomendado)
+
+for ($x = 1; $x < 10; $x++)
+    echo $x . '<br>';
+
+echo '<hr>';
+
+# podemos conter uma assinatura diferente. (pouco usado)
+$i = 1;
+for (; $i < 10;)
+{
+    echo $i++ . '<br>';
+}
+
+echo '<hr>';
+
+
+# o primeiro e o ultimo parametro tambem pode ser divididos
+# em varios parametros usando a virgula como separador
+# isso vai apresentar assim = 10,9,8,7,6,5,4,3,2. (contagem regresiva)
+for($contador = 1, $x = 10; $contador < 10; $contador++, $x--)
+{
+    echo $x . '<br>';
+}
+
+# por exemplo,podemos apresentar todos os dados de um array
+$nome = ['joao', 'vitor', 'gi'];
+for($i = 0; $i < sizeof($nome); $i++)
+{
+    echo $nomes[$i] . '<br>';
+}
+
+# sizeof = conta quantos elementros existem dentro do array (se eu usar Count da na mesma)
