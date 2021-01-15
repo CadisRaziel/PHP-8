@@ -1,0 +1,27 @@
+<?php
+
+# CICLOS/LOOPS
+
+#FOREACH
+
+# é um clico especialmente concebido para fazer uma iteração pelos valores de um ARRAY
+
+$nomes = ['vitor', 'joao', 'gi'];
+    foreach($nomes as $nome)
+    {
+        echo $nome . '<br />';
+    }
+
+echo '<hr>';
+
+
+# existe ainda uma outra assinatura que permite ir buscar a chave e o valor do array 
+$capitais = [
+    'portugal' => 'Lisboa',
+    'brasil' => 'brasilia',
+    'espanha' => 'madrid'
+];
+foreach($capitais as $key => $value)
+{
+    echo "Para o pais $key a capital é $value<br>";
+}
