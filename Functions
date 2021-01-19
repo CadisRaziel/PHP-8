@@ -1,0 +1,59 @@
+<?php
+
+//criando funções
+
+# FUNCTION / FUNÇÕES (é fundamental saber)
+
+# funções são blocos de codigos identificados por um nome e uma assinatura,
+# e que permite que o codigo seja reutilizad oe organizado de uma forma ,    
+# muito mais consistente.
+
+# esses blocos só são executados quando são solicitados.
+
+# definimos uma função usando a palavra chave function, seguido do nome e de um conjunto de () e deopis {}
+
+# (forma correta de escrita de uma funçao)
+function teste(){
+    # codigo aqui
+}
+
+
+# exemplo da sua aplicação
+echo 'inicio da nossa aplicação';
+echo '<br>';
+executar(); 
+
+#lembre-se a função pode estar definida a seguir ou antes da execução (repare nesse exemplo como o executar()esta antes)
+function executar(){
+    echo 'a função foi executada.';
+}
+
+# no PHP o nome das funções é case insensitive (se tiver duas palavras iguas e uma tem maiuscula e outra não,
+# ele vai saber que são duas palavra iguais "a letra maiuscula não diferencia")
+//function Falar(){
+
+//}
+
+//function falar(){
+
+//}
+
+# podem ser usados varios padroes para o nome das funções
+# o mais comuns são o camelCase e o snake_case
+function camelCase(){
+
+}
+
+function snake_case(){
+
+}
+
+function getClient(){
+
+}
+
+function get_cliente(){
+
+}
+
+# sempre escolher um padrao e manter ele até o final do projeto
