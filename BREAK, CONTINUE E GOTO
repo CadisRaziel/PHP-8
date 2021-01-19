@@ -1,0 +1,63 @@
+<?php
+
+# BREAK, CONTINUE E GOTO
+
+#Existem duas funções especiais dentro dos loops: break e continue
+
+
+#BREAK
+#serve para interromper a execução de um loop
+for($i = 0; $i < 20; $i++){
+    echo $i. '<br>';
+    if($i == 10) {
+        break; # interrompe o loop
+    }
+}
+
+echo '<hr>';
+
+$nomes = ['vitor', 'ana', 'gi'];
+foreach($nomes as $nome){
+    echo $nome . '<br>';
+    if($nome == 'ana'){
+        break;
+    }
+}
+
+# CONTINUE
+#permite avançar uma volta do ciclo ignorando o codigo que deveria ser executado 
+for($i = 0; $i < 20; $i++){
+        if($i == 10) {
+        continue; # volta a linha inicial do loop (não vai apresentar o 10, porém apresenta todos outros numeros até o 20)
+    }
+    echo $i. '<br>';
+}
+
+echo '<hr>';
+
+$nomes = ['vitor', 'ana', 'gi'];
+foreach($nomes as $nome){    
+    if($nome == 'ana'){
+        continue; # mesma coisa, para na ana e não apresenta ela, porém continua o codigo e apresenta todos os outros nomes
+    }
+    echo $nome . '<br>';
+}
+
+echo '<hr>';
+
+#GOTO
+# é muito pouco usado porque torna a leitura do código mais complexa.
+# foi introduzido no PHP 5.3 e permite sair do loop e ir para uma linha de código,
+# definida para um label (nome seguido de :)
+
+for($i = 0; $i < 20; $i++){
+    if($i == 10) {
+        goto teste; # vai para o label abaixo (a hora que chegar no 10 vai para o label e para o codigo)
+    }
+    echo $i . '<br>';
+}
+
+echo 'fim do loop';
+
+teste:
+    echo 'AQUI';
