@@ -1,0 +1,34 @@
+<?php
+
+# FUNCTION / FUNÇÕES
+# PARAMETROS OPCIONAIS 
+
+
+#podemos criar funções que não tem parametros com um valor pré definido
+#a chamada dessas funções não obriga a definir argumentos para esses parametros.
+
+function multiplicar ($a, $b = 2) # sempre temos que da um valor ao $a (o parametro opcional sempre tem que ser o ultimo !!)
+{
+    //codigo aqui
+    
+    # $a será o valor passado por argumento
+    # $b sera:
+    #     o valor do argumento se ele for passado na chamada
+    #     o valor 2 se nao for passado o argumento
+
+    echo $a * $b;
+}
+
+multiplicar(10); # $a=10 e $b =2
+echo '<br>';
+multiplicar(10, 20); # $a=10 e $b=20
+echo '<hr>';
+
+# Os parametros opcionais tem que ser definidos após o parametro não opcional
+function dividir($a = 2, $b) # não faça desse modo, faça como no exemplo de cima !!!
+{
+    echo "$a e $b";
+}
+dividir(2,10);
+
+#no PHP 7 ainda era possivel fazer isto sem avisos, mas no PHP 8, aparecerá um aviso no browser 
