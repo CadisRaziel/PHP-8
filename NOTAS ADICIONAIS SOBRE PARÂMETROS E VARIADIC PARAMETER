@@ -1,0 +1,46 @@
+<?php
+
+# NOTAS ADICIONAIS SOBRE PARÂMETROS E VARIADIC PARAMETER
+
+
+# Uma função nunca pode ser chamada sem que os valores obrigatorios sejam fornecidos
+#exemplos
+
+function funcao($a, $b)
+{
+    //codigo aqui  
+}
+
+// funcao('teste');
+#isto é errado, só foi fornecido o valor de $a
+
+
+#contudo, embora pouco frequente, podemos passar mais argumentos que o solicitado
+
+
+function outraFuncao($a)
+{ //o $a vai ter o mesmo valor que o $x (porém eu posso retirar o $a)
+    $x = func_get_arg(0); //10
+    $y = func_get_arg(1); //20
+    $z = func_get_arg(2); //30
+    echo "$x - $y - $z";
+
+    echo '<br>';
+
+    echo func_num_args(); # mostra quantos arumentos foi passado para a function
+
+}
+outraFuncao(10, 20, 30);
+
+echo '<br>';
+
+# Tambem não muito comum, mas sendo possivel, podemos usar um argumento especial
+# designado por Variadic Parameter
+function minha_funcao(...$argumento)
+{
+    foreach ($argumento as $v) {
+        echo "$v<br>";
+    }
+}
+minha_funcao(10, 20, 30, 40, 50);
+//(repare como coloquei ..., isso faz com que os argumentos fique percorendo o foreach ate apresentar todos da valores da "minha_funcao")
