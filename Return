@@ -1,0 +1,50 @@
+<?php
+
+# RETURN
+
+# A declaração return provoca o fim da execução de um codigo de uma função
+# retornando ao local onde a função foi chamada.
+
+
+function falar(){
+    return; # tudo o que estiver abaixo do return vai ser ignorado
+    echo 'Não vai ser apresentado este texto';
+}
+
+# Opcionalmente podemos usar o return para devolver um valor.
+# desta forma, uma função pode ser responsavel, por exemplo: desenvolver um conjunto de calculos e devolver o resultado
+
+function adicionar($a, $b){
+    $resultado = $a + $b;
+    return $resultado;
+
+    # ou
+
+    return $a + $b;
+}
+echo adicionar(10,20); # o 10 e 20 vai assumir o $a, $b
+
+
+# OUTRO EXEMPLO
+
+$nome = 'vitor';
+if(avaliar_nome($nome)){
+    echo 'o cliente esta correto'
+}
+function avaliar_nome($n){
+    if($n == 'vitor'){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
+# Uma função sem qualquer valor de retorno(return), devolve sempre um valor Null
+function teste(){
+    //codigo aqui...
+}
+if(falar() == null){
+    echo 'Função com retorno igual a nulo'; # vai ser apresentado esse texto
+}
