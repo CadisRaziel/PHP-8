@@ -1,0 +1,53 @@
+<?php
+
+#FUNÇÕES ANONIMAS
+
+# A partir do PHP 5.3 foram introduzidas as funções anonimas.
+
+# Uma função anonima não tem nome e pode ser definida como o valor, a atribuir a uma variavel
+
+#exemplo
+$a = function(){
+    echo 'Ola mundo';
+};
+
+# Importante: Vejam como, neste caso, após a chave {} de fecho da function tem que por um ;
+
+//depois para usar a variavel $a com a function usamos desta maneira abaixo
+$a();
+
+
+# ---------------
+# Outro exemplo 
+
+$falar = function($mensagem){
+    echo "Eu digo: $mensagem";
+}; # repare no ; aqui
+
+$falar('estou aqui'); # a $mensagem vai se transformar no 'estou aqui'
+
+
+
+#--------------
+# Outro exemplo
+
+$andar = function($metros){
+    return "Andei $metros metros";
+};
+echo $andar(100);
+
+
+
+#--------------
+# Outro exemplo
+
+# as funções anonimas são particularmente uteis quando as queremos passar como argumentos para uma função 
+
+$a = function(){
+    return 'Função A';
+};
+
+function falar($x){
+    echo $x;
+}
+falar($a());
