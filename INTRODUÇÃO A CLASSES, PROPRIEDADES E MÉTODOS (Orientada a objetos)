@@ -1,0 +1,69 @@
+<?php
+
+# CLASSES  - INTRODUÇÃO Á POO (OOP) - PROGRAMAÇÃO ORIENTADA A OBJETOS
+
+
+# Uma classe é um molde/forma/modelo a partir do qual criamos objetos.
+# Exemplo: a classe humano é um modelo para, a partir dela, criarmos um conjunto de homens e mulheres,
+# cada um partilhando o mesmo "molde", mas com propriedades e funções com valores diferentes.
+# Homem e mulher tem ambos cabelo, mas o homem pode ter cabelo escuro e a mulher cabelo mais claro.
+
+
+# Teoricamente
+# class humano
+#  > Cabelo
+#  > Peso
+#  > Genero 
+#  > Caminhar
+
+
+# Homem -> Humano
+#  > cabelo - castanho
+#  > genero - masculino
+#  > peso - 75
+#  > caminhar()
+
+
+# Homem -> Mulher
+#  > cabelo - claro
+#  > genero - feminino
+#  > peso - 63
+#  > caminhar()
+#  > cantar() - pode ter metodos adicionais
+
+
+
+# CLASSES
+
+# As classes são definidas pela declaração class, o seu nome e o bloclo de codigo que contem,
+# sua propriedades e metodos 
+
+# Por conversão PSR-1, o nome de uma classe deve ser sempre atribuido na forma de 
+# StudlyCaps/PascalCase/MixedCase. O corpo deve ser definido da seguinte forma :
+
+class Humano {
+    //propriedades e metodos
+}
+
+
+class JogadorDeFutebol {
+    // propriedades e metodos
+}
+
+# o corpo de uma classe contem propriedades e metodos 
+# Propriedades = são variaveis que guardam as caracteristicas do objeto.
+# Metodos = são funções que definem o que o objeto pode fazer.
+
+# As propriedades são tambem conhecidas como fields (campos) ou atributos de uma classe
+# No PHP, as propriedades tem que ter um nivel de acesso especificado 
+# Veremos o que significa mais a frente..
+
+class FiguraGeometrica {
+    public $largura, $altura;
+    public $y;
+    public $x;
+
+    function novaArea($a, $b) {
+        return $a * $b;
+    }
+}
