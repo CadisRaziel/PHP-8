@@ -1,0 +1,38 @@
+<?php
+
+# CLASSES 
+
+# Para aceder as propriedades de uma classe, dentro dos metodos da classe, é usado  a pseudo variavel $this seguida,
+# do operador seta ->
+
+
+class Humano {
+    public $nome = 'vitor';
+    public $sobrenome = 'bz'; 
+
+    public function NomeCompleto() {
+        //$nome = 'teste';  //esse $nome é uma variavel conhecida apenas dentro dessa função (como aqui não é a classe ele nao vai usar)
+        return $this->nome. ' ' . $this->sobrenome; //esse $this->nome é do public $nome (ele pega as propriedades da classe)
+        //se eu quisese se referir a vairiavel da função $nome era só tirar o this
+    }
+}
+
+
+# As classes recorrem a utilização de Acess Modifiers - Niveis de acessos.
+# Os niveis de acesso aos dados indicam se podemos ver os dados apenas dentro da classe 
+# se os podemos ver fora da classe ou se estão protegidos por algum motivo extra.
+# veremos mais á frente como estas informações são importantes..
+
+# Instanciar um objeto = CRIAÇÃO DE UM OBJETO A PARTIR DE UMA CLASSE !
+
+# Um objeto é uma variavel criada a partir de uma classe 
+# instanciar um objeto significa criar um objeto a partir de uma classe atribuindo,
+# a variavel a expressão new e o nome da classe.
+
+$homem = new Humano(); //caso esse codigo esteja antes da classe, não terá problema, porém a classe tem que existir no mesmo ficheiro(script)
+
+# com a implementação anteriro podemos agora aceder ás propriedades e metodos
+echo $homem->nomeCompleto(); // 'vitor bz'
+
+# tal como acontece com as funções, os objetos podem ser instanciados mesmo,
+# se a definição da classe aparecer mais abaixo no script 
