@@ -1,0 +1,61 @@
+<?php
+
+class Humano1{
+    public $nome = 'Vitor';
+    public $sobrenome = 'BZ';
+
+    public function nomeCompleto () {
+        return $this->nome. ' ' . $this->sobrenome;
+    }
+
+}
+
+$homem = new Humano1();
+echo $homem->nomeCompleto(); # vitor bz
+
+
+
+//----------------------------
+
+# CONSTRUCTOR 
+
+# O Constructor é um metodo especial dentro de uma classe
+# que é sempre executado automaticamente quando é criado um objeto a partir de uma classe.
+# esse metodo é definido de uma forma especial com __ (dois underlines).
+# São chamado de metodos mágicos 
+# porque tem uma execução especifica ou automatica associada.
+
+class Humano{
+    private $nome; //quando estão privado só são conhecidos pelo que esta dentro da classe
+    private $sobrenome;
+
+    function __construct($n, $a){
+        $this->nome = $n;
+        $this->sobrenome = $a;
+    }
+
+    public function nomeCompleto1() {
+        return $this->nome . ' ' . $this->sobrenome;
+    }
+}
+$homem1 = new Humano('Vitor', 'BZ');
+$mulher = new Humano('gi', 'ari');
+
+echo $homem1->nomeCompleto1();
+echo $mulher->nomeCompleto1();
+
+
+
+
+# Para as classes que tem construtor sem parametros(), podemos
+# instanciar da seguinte forma
+
+class Humano2 {
+    function __construct() {
+        //codigo aqui
+    }
+}
+
+# $homem2 = new Humano;
+//ou
+# $homem2 = new Humano();
