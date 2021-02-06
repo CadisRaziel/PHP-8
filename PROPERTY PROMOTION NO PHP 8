@@ -1,0 +1,81 @@
+<?php
+
+# CONSTRUCTOR
+
+
+# Olhemos para o exemplos.
+
+
+class Humano1{
+    public $nome;
+    public $sobrenome;
+}
+
+class humano2{
+    public function falar(){
+        //codigo aqui....
+    }
+
+    private function andar(){
+        //metodo acessivel dentro da classe apenas
+    }
+
+    public function movimento(){
+        $this->andar(); //como eu defini andar() privado, eu posso usar uma função publica para acessar o andar(); para que os objetos fora da classe acessem a funçao movimento e andar
+    }
+}
+
+# podemos ter classe sem qualquer tipo de metodo e podemos ter,
+# classes sem qualquer tipo de propriedade.
+
+
+# Ao instanciar-mos a classe Humano1, podemos aceder diretamente as suas propriedades,
+# pelo fato de estarem identicas com o acess modifier public (acess modifier = public, private)
+
+$homem = new Humano1();
+$homen->nome = 'Vitor';
+$homem->sobrenome = 'BZ';
+
+$mulher = new Humano2();
+//$mulher->andar(); //repare que esta dando erro no andar pelo motivo dele ser privado (sómente a classe enxerga ele)
+$mulher->movimento(); //como eu defini andar() privado, eu posso usar uma função publica para acessar o andar(); para que os objetos fora da classe acessem a funçao movimento e andar
+
+
+
+# constructor 
+
+# Com o PHP 8 foi introduzido o conceito Property Promotion no construtor
+# isso permite definir propriedades diretamente nos parametros do construtor
+# Vejamos um exemplo "antes" e "depois"
+
+//antes do php8
+class Humano4 {
+    public $nome;
+    public $sobrenome;
+
+    function __construct($n, $a){
+        $this->nome = $n;
+        $this->sobrenome = $a;
+    }
+}
+
+# No php 8 podemos criar a mesma classe da seguinte forma
+
+//depois com o php8
+class Humano5{
+    function __construct(public $nome1, public $apelido){
+        $this->nome1 = $nome1;
+        $this->apelido = $apelido;
+    }
+}
+
+$h1 = new Humano4('Vitor', 'BZ');
+$h2 = new Humano5('Gi', 'Ariella');
+
+echo $h1->nome. ' ' . $h1->$sobrenome;
+echo $h2->nome1. ' ' .$h2->$apelido;
+
+
+# Importante: Ao contratio do nome das variaveis, o nome das classes é case insensitive (posso por minuscula mesmo a classe sendo Maiuscula)
+$h3 = new humano1('nome', 'sobrenome');
+echo $h3->nome. ' ' . $h3->sobrenome;
