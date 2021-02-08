@@ -1,0 +1,31 @@
+<?php
+
+# CLASSES ANONIMAS
+
+# Com o PHP 7 foi introduzido um conceito usando noutras linguagens e que se designa por classes anonimas.
+# Esse tipo de classe só faz sentido quando queremos instanciar apenas UM objeto dessa classe.
+
+
+# Exemplo normal :
+
+class Objeto1 {
+    function teste() {
+        echo 'teste - normal';
+    }
+}
+
+$a = new Objeto1(); //-> isso é instanciar
+
+
+# Exemplo com classes anonimas :
+
+$h = new class {
+    function teste() {
+        echo 'teste - classe anonima';
+    }
+}; #Nota: é importante por o ; aqui no final !!
+
+
+//depois de instanciar chamamos o metodo da classe com -> 
+$a->teste();
+$h->teste();
