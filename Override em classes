@@ -1,0 +1,109 @@
+<?php
+
+# OVERRIDING (reescrever)
+
+# O mecanismo de overriding permite a uma classe derivada ter metodos rescritos,
+# especificamente para essa classe.
+
+# Por exemplo, podemos ter um metodo TESTE na classe base 
+# e ter o mesmo metodo TESTE com o codigo diferente da classe derivada 
+
+
+class Animal {
+    function mover() {
+        echo 'Mover a partir da classe base.';
+    }
+}
+
+class Mamifero extends Animal {
+
+}
+
+class Peixe extends Animal {
+    function mover() {
+        echo 'Mover a partir da classe peixe.';
+    }
+}
+
+$animal = new Animal();
+echo $animal->mover();
+
+$mamifero = new Mamifero();
+echo $mamifero->mover(); //vai executar o da classe base animal
+
+$peixe = new Peixe();
+echo $peixe->mover(); // ele vai priorizar a função rescreita na class peixe
+
+
+//===================================
+# este sistema tambem é aplicavel as propriedades
+
+class Ave {
+    public $especie = 'Ave';
+}
+
+class Cachorro extends Ave {
+    public $especie = 'Doguinho';
+}
+
+$a = new Ave();
+echo $a->especie;// vai mostrar "ave"
+
+$b = new Cachorro();
+echo $b->especie; // vai priorizar a propriedade rescrita e vai apresentar "Doguinho"
+
+
+//==========================================
+
+# Para além dos conceitos da classe base e classe derivada,
+# temos o conceito de parent class (classe pai)
+# é a classe a partir da qual fazemos a derivação 
+
+
+# Vamos ver um exemplo como o constructor deste tipo de classe 
+
+class Retangulo {
+    public $largura, $altura;
+    function __construct($a, $b) {
+        $this->largura = $a;
+        $this-> altura = $b;
+    }
+
+    function calcularArea() {
+        return $this->largura * $this->altura;
+    }
+}
+
+class Quadrado extends Retangulo {
+    function __construct($a) {
+        $this->largura = $a;
+        $this->altura = $a;
+    }
+}
+
+$rect = new Retangulo(10, 20);
+$quad = new Quadrado(10);
+
+echo $rect->calcularArea();
+echo $quad->calcularArea();
+
+# mas podemos chamas o construtor da class base usando a expressão parent 
+
+class Quadrado1 extends Retangulo {
+    function __construct($a) {
+        parent::__construct($a, $a);
+    }
+}
+
+$quad1 = new Quadrado1(5);
+echo $quad1->calcularArea();
+
+
+# A expressão parent é um nome alternativo ao nome da classe base 
+# Podemos tambem fazer da seguinte forma: 
+
+class Quadrado2 extends Retangulo {
+    function __construct($a) {
+        Retangulo::__construct($a, $a); 
+    }
+}
