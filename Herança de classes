@@ -1,0 +1,87 @@
+<?php
+
+# HERANÇA | INHERITANCE
+
+# A herança é o mecanismo atraves do qual podemos criar classes que herdam propriedades e metodos de outras classes
+# a classe inicial a partir da qual outras vão ser criadas, é designada por classe base
+# todas as classe que vão herdar propriedades e metodos da classe base são designadas por classes derivadas
+
+# exemplo (uma classe tradicional):
+
+class Animal {
+    public $especie;
+    public $peso;
+
+
+    function tipoEspecie() {
+        return "Este animal é da especie {$this->especie}";
+    }
+}
+
+$animal = new Animal();
+$animal->especie = 'Mamiferos';
+echo $animal->tipoEspecie();    
+
+
+//====================================================
+
+# Para herdar uma classe a partir de outra usamos a expressão extends
+
+
+# exemplo (de uma classe base):
+
+class Animals {
+    public $especies;
+    public $pesos;
+
+
+    function tipoEspecie2 () {
+        return "Este animal é da especie {$this->especie}";
+    }
+}
+
+# exemplo (uma classse com herança):
+
+class Mamifero extends animals {	
+    //não é necessario voltar a deifnir especies e pesos
+    //essas propriedades ja existe na classe base
+
+
+    //podemos acrescentar outras propriedades e metodos 
+    public $quantidadePernas;
+    public $temPelo;
+
+    function temQuantasPernas () {
+        echo "O animal da especie {$this->especies} tem {$this->quantidadePernas}";
+    }
+
+}
+
+$animais = new Mamifero();
+$animais->especie = 'Cavalo';
+$animais->quantidadePernas = 4;
+echo $animais->temQuantasPernas();
+
+
+//==========================================
+# Um exemplo em pseudo-codigo
+
+/*
+
+class Veiculo 
+    > Marca
+    > Ano   
+    > tipo_de_locomocao
+
+class Automovel extends Veiculo
+    (tem as propriedades e metoods do Veiculo)
+    > Potencia 
+    > autonomia 
+    > num_portas
+
+class Bicicleta extends Veiculo
+    (tem as propriedades e metoods do Veiculo)
+    > tipo_bicicleta
+    > tipo_estrutura 
+
+    */
