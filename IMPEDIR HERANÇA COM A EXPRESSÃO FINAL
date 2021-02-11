@@ -1,0 +1,34 @@
+<?php
+
+# FINAL 
+
+# Para impedir que uma classe derivada possa fazer override de metodos
+# podemos utilizar a expressão FINAL da seguinte forma:
+
+class Veiculo {
+    final function mover() { //colocando o FINAL aqui impede que a função seja criada em classe derivada ! (vai dar erro na classe derivada)
+        //codigo aqui
+    }
+}
+
+class Bicicleta extends Veiculo {
+    function mover() {
+        //override do codigo original 
+    }
+}
+
+# Podemos, inclusive, definir uma classe inteira como não sendo possivel de ser herdada colocando FiNAL antes da classe
+
+final class Humano { //para impedir que outras classes tenha as funções da classe principal é só por FINAL class
+    //codigo aqui
+    function teste() {
+        echo 'teste';
+    }
+}
+
+class Homem extends Humano {
+    //codigo aqui
+}
+
+$a = new Homem();
+$a->teste();
