@@ -1,0 +1,101 @@
+<?php
+
+# ACESS LEVELS - NIVEIS DE ACESSO
+
+# Existem 3 tipos de niveis de acesso a elementos dentro de uma class.
+# Public, Protected e private
+
+
+class MinhaClasse {
+    public $v1;
+    protected $v2;
+    private $v3;
+}
+
+$a = new MinhaClasse();
+$a->v1 = '111';         # possivel
+$a->v2 = '222';         # não é possivel. Resulta um erro
+$a->v3 = '333';         # não é possivel. Resulta um erro
+
+# Porque?
+
+#Public     
+# Os membros publicos (propriedades ou metodos) de uma classe, estão sempre acessiveis.
+# Se criarmos um objeto a partir da classe, temos acesso direto a esses elementos.
+
+class TudoPublico {
+    public $propriedades;
+    
+    public function metodo () {
+        echo 'metodo publico';
+    }
+}
+
+//como são publicos eles estão acessiveis a qualquer objeto que seja instancia dessa classe TudoPublico
+$obj1 = new TudoPublico();
+$obj1->propriedades = "a";
+$obj1->metodo();
+
+
+
+#Protected
+# Um elemento protected pode ser alcançado dentro da classe
+# e dentro de uma qualquer classe que seja uma extensão de outra classe
+
+class ClasseTeste {
+    public $publico = "a";
+    protected $protegida = "b";
+    private $privada = "c"; //a privada só esta disponivel dentro da classe em que ela é definida
+}
+
+class ClasseDerivada extends ClasseTeste {
+    function teste() {
+        echo $this->publica; #possivel
+        echo $this->protegida; #possivel
+        echo $this->privada; #erro 
+    }
+}
+
+$b = new ClasseTeste();
+$b->publico = "1"; #Possivel
+$b->protegida = "2"; #Gera erro
+$b->privada = "3"; #Gera erro
+
+$c = new ClasseDerivada();
+$c->publico = "a"; #possivel
+$c->protegida = "b"; #erro
+$c->privada = "c"; #erro
+
+$c->teste(); //na function é possivel mostrar o resultado de protegida 
+
+
+#Private
+# Só pode ser visivel dentro da prorpia class.
+# Não é visivel nos objetos instanciados nem noutras classes herdadas .
+
+
+#----------------------------------------------------------------
+# Ao contrario das propriedades, os metodos não necessitam de ter um nivel de acesso especificado claramente
+# Se não for identificado por defeito o metodo é publico 
+
+class Teste {
+    function mover() { //como não identifiquei como private ou protected esse metodo ele automaticamente sera transformado em publico 
+        //codigo aqui...
+    }
+}
+
+$d = new teste();
+$d->mover(); # possivel
+
+class Teste2 {
+    private $valor = "b";
+
+    function mover2(){
+        //codigo aqui..
+
+        echo $this->valor; //quando colocamos o private dentro de uma function ai sim ele será apresentado só que como uma função 
+    }
+}
+
+$e = new Teste2();
+$e->valor = "a"; // repare que o valor não pode ser acessada quando instanciamos o objeto
