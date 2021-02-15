@@ -1,0 +1,44 @@
+<?php
+
+# VAR keyword
+
+# Tem o mesmo compartamento de public, mas apenas existe por retrocompatibilidade
+# Devido ao codigo escrito antes no PHP 5. Não é recomendavel usar porque poderá em breve nao ser mais suportado
+
+
+// EVITE USAR VAR !
+class Homen {
+    var $nome, $sobrenome;
+}
+
+$eu = new Homen();
+$eu->nome = 'Vitor';
+$eu->sobrenome = 'BZ';
+
+//------
+
+# OBJECT ACESS 
+
+# No PHP, um objeto instanciado a partir de uma classe
+# pode aceder a elementos privados e protegidos de outro objeto criado a partir da mesma classe
+# Este comportamento não acontece na maior parte das linguagens de programação.
+
+class Humano {
+    private $nome1 = 'X';
+
+    function setPrivate($objeto, $valor) {
+        $objeto->nome = $valor;
+    }
+
+    function apresentar() {
+        echo $this->nome;
+    }
+}
+
+$a = new Humano();
+$b = new Humano();
+$a->setPrivate($b, 'Vitor');
+
+$a->apresentar(); //vai apresentar 'X'
+echo '<br>';
+$b->apresentar(); //vai apresentar 'Vitor'
