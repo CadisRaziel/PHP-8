@@ -1,0 +1,78 @@
+<?php
+
+# ACESS LEVEL - Aspecto importante a reter
+
+# Uma boa prática é criar o menor numero de propriedades de uma classe como publica.
+# Colocar uma propriedade como publica é expor em demasia a propriedade 
+# Um exemplo: Imaginem que querem que uma propriedade de uma classe seja sempre um numero 
+
+class Humano {
+    public $idade;
+}
+
+$eu = new Humano();
+$eu->idade = 'Ola mundo'; # isso é possivel pois o php não é strongly typed
+
+# Para definir corretamente esse tipo de situação, podemos usar metodos para definir e ir buscar,
+# os valores das propriedades privadas. Estes metodos permitem garantir que a integridade das propriedades sejam mantidas.
+
+class Humano1 {
+    private $idade;
+}
+
+$eu = new Humano1();
+$eu1->idade = 'Vitor'; #não é possivel porque a propriedades é privada
+
+
+
+//exemplo 2
+class Humano2 {
+    private $idade = 0;
+
+    public function setIdade($valor) { //set = definir o valor
+        //verifica se $valor é numerico 
+        if(is_numeric($valor)){
+            $this->idade = $valor;
+        }
+    }
+
+    public function getIdade() { //get = ir buscar o valor 
+        return $this->idade;
+    }
+}
+
+$eu2 = new Humano2(); 
+$eu2->setIdade('vitor'); //como coloquei string vai apresentar apenas 0 (repare que coloquei is_number ali em cima)
+echo $eu2->getIdade();
+$eu2->setIdade('28'); //como eu defini $valor como sendo numero então o 28 dará certo
+
+
+
+//exemplo 3
+
+class Tempo {
+    private $segundos;
+
+    //----------------------
+    function setSegundos($valor) {
+        if(!is_numeric($valor) || $valor < 0 ){
+            $this->segundos = 0;
+        } else {
+            $this->segundos = $valor;
+        }
+    }
+
+    //--------------------
+    function getMinutos() {
+        return $this->segundos / 60; 
+    }
+
+    //-------------------
+    function setMinutos($valor) {
+        if($valor == 0){
+            $this->segundos = 0 ;
+        } else {
+            $this->segundos = $valor * 60;
+        }
+    }
+}
